@@ -366,19 +366,19 @@ action:
                       group: "{{group}}"
                       interruption-level: "{{importance.response_text|lower if importance is defined else 'active'}}"
           - alias: "Send instant notification to telegram"
-                - action: "notify.telegram"
-                  data:
-                    title: "{{ label }}"
-                    message: "{{camera}}"
-                    data:
-                      video: "{{video if video != '' else None}}"
-                      image: "{{image if image != '' else None}}"
-                      entity_id: "{{camera_entity if mode=='Camera' and preview_mode=='Live Preview'}}"
-                      url: !input tap_navigate #iOS
-                      clickAction: !input tap_navigate #Android
-                      tag: "{{tag}}"
-                      group: "{{group}}"
-                      interruption-level: "{{importance.response_text|lower if importance is defined else 'active'}}"  
+            - action: "notify.telegram"
+              data:
+                title: "{{ label }}"
+                message: "{{camera}}"
+                data:
+                  video: "{{video if video != '' else None}}"
+                  image: "{{image if image != '' else None}}"
+                  entity_id: "{{camera_entity if mode=='Camera' and preview_mode=='Live Preview'}}"
+                  url: !input tap_navigate #iOS
+                  clickAction: !input tap_navigate #Android
+                  tag: "{{tag}}"
+                  group: "{{group}}"
+                  interruption-level: "{{importance.response_text|lower if importance is defined else 'active'}}"  
 
   - alias: "Analyze event"
     choose:
@@ -445,18 +445,18 @@ action:
                         group: "{{group}}"
                         interruption-level: passive
           - alias: "Send instant notification to telegram"
-                - action: "notify.telegram"
-                  data:
-                    title: "{{ label }}"
-                    message: "{{camera}}"
-                    data:
-                      video: "{{video if video != '' else None}}"
-                      image: "{{image if image != '' else None}}"
-                      entity_id: "{{camera_entity if mode=='Camera' and preview_mode=='Live Preview'}}"
-                      url: !input tap_navigate #iOS
-                      clickAction: !input tap_navigate #Android
-                      tag: "{{tag}}"
-                      group: "{{group}}"
-                      interruption-level: "{{importance.response_text|lower if importance is defined else 'active'}}"    
+            - action: "notify.telegram"
+              data:
+                title: "{{ label }}"
+                message: "{{camera}}"
+                data:
+                  video: "{{video if video != '' else None}}"
+                  image: "{{image if image != '' else None}}"
+                  entity_id: "{{camera_entity if mode=='Camera' and preview_mode=='Live Preview'}}"
+                  url: !input tap_navigate #iOS
+                  clickAction: !input tap_navigate #Android
+                  tag: "{{tag}}"
+                  group: "{{group}}"
+                  interruption-level: "{{importance.response_text|lower if importance is defined else 'active'}}"    
 
   - delay: '00:{{cooldown|int}}:00'
